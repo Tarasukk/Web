@@ -12,3 +12,15 @@
     width: 60px;
     height: 60px;
 }
+
+.close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #fff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    padding: 0.3rem;
+    cursor: pointer;
+}

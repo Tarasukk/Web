@@ -1,3 +1,27 @@
+<div class="popup">
+  <div class="popup-content">
+    <%= form_with(model: @investment, local: true) do |f| %>
+      <div class="">
+        <p class="very-mb-sm text-center"> <%= f.label :coin_name %></p>
+        <%= f.select :coin_name, Coin.pluck(:name), {include_blank: true},{data: {controller: 'slim',class:'my-slim-select'}}%>
+      </div>
+      
+      <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :shopping_price %></p>
+      <p class="text-center "><%= f.text_field :shopping_price, class: 'form-text-field',value: '100'%></p>
+
+      <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :invest %></p>
+      <p class="text-center"><%= f.text_field :invest, class: 'form-text-field'%></p>
+        
+      <div class="div-center mt-btn">
+        <%= f.submit '+', class: "text-20" %>
+      </div>
+    <% end %>
+    <%= image_tag("close.png", class: "close") %>
+  </div>
+</div>
+
+<%= javascript_include_tag('invest.js') %>
+
 <div class="container-md">
   <div class="circle div-center mt mb-md">
     <p><%= current_user.email.chr.upcase %></p>
@@ -11,55 +35,43 @@
       <%= get_final_percents(@investments) %>%
     </p>
   </div>
+    <div class="text-center">
+    <button class="text-20 very-mt-sm" type="button" id="button">+</button>
 
-  <%= form_with(model: @investment, local: true) do |f| %>
-    <div class="mt-md">
-      <%= f.select :coin_name, Coin.pluck(:name), {include_blank: true},{data: {controller: 'slim'}}%>
-    </div>
-    <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :shopping_price %></p>
-    <p class="text-center "><%= f.text_field :shopping_price, class: 'form-text-field'%></p>
-
-    <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :invest %></p>
-    <p class="text-center"><%= f.text_field :invest, class: 'form-text-field'%></p>
-    
-    <div class="div-center very-mt-sm very-mb-sm">
-      <%= f.submit  '+', class: "text-20" %>
-    </div>
-  <% end %>
+  </div>
 
   <div class="coins-frame mt-md display-flex very-mb-sm ">
-        <div class="frame-center">
-          <%= image_tag ("dollar.png"), class:'icon' %>
-        </div>
-        
-        <div class="amount-invest">
-          <p class="frame-item">
-            Amount
-          </p> 
-          <p>Invest$</p>
-        </div>
-        
-        <div class="sh_price-curr_price">
-          <p class="frame-item">Shopping price</p>
-          <p>Current price</p>
-        </div>
-
-        <div class="pch-dch">
-          <p class=" frame-item">
-            Profit$
-          </p>
-          <p class="">
-            Profit%
-          </p> 
-        </div>
-
-        <div class="frame-center button-delete">
-          <button class="text-red" type="button">
-            <%= fa_icon('trash-o') %>
-          </button>
-          
-        </div>
+    <div class="frame-center">
+      <%= image_tag ("dollar.png"), class:'icon' %>
     </div>
+        
+    <div class="amount-invest">
+      <p class="frame-item">
+        Amount
+      </p> 
+      <p>Invest$</p>
+    </div>
+        
+    <div class="sh_price-curr_price">
+      <p class="frame-item">Shopping price</p>
+      <p>Current price</p>
+    </div>
+
+    <div class="pch-dch">
+      <p class=" frame-item">
+        Profit$
+      </p>
+      <p class="">
+        Profit%
+      </p> 
+    </div>
+
+    <div class="frame-center button-delete">
+      <button class="text-red" type="button">
+        <%= fa_icon('trash-o') %>
+      </button>      
+    </div>
+  </div>
 
   <% @investments.each do |item| %>
     <% if current_user.id == item.user_id %>

@@ -13,8 +13,12 @@ class InvestmentsController < ApplicationController
           invest: params[:investment][:invest],
           amount: params[:investment][:amount]
     )
-    
-    redirect_to investments_path
+    if investment.save
+      redirect_to investments_path , notice: 'Your investment created'
+    else
+      redirect_to investments_path , alert: 'You filled out the form incorrectly'
+    end
+
   end
 
   def destroy  

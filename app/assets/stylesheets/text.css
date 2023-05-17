@@ -19,11 +19,13 @@ a {
     text-align: center;
 }
 
-.text-red {
+.text-red,
+.alert {
     color: #cd334d;
 }
 
-.text-green {
+.text-green,
+.notice {
     color: #19a56f;
 }
 

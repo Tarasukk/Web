@@ -49,3 +49,10 @@
     color: #fff;
     background: #5561fb;
 }
+
+.button-delete {
+    margin-left: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+}
