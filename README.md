@@ -90,5 +90,15 @@ Connected sorting algorithm with frontend design, improved sorting algorithm in 
 Holovko Uaroslav: https://github.com/Lowckick/WebProgrammingProject;
 <br>
 Pull link: https://github.com/Tarasukk/Web/commit/225d33f565559583ec780bdf8ba847eee45fe1ca;
+## Lab 4:
+<br>
+Holovko Uaroslav
+<br>
+Github: https://github.com/Lowckick/WebProgrammingProject
+<br>
+Pull request: https://github.com/Lowckick/Web/pull/1
+<br>]
+
+
 
 
