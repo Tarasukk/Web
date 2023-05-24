@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symbol: MyString
+  name: MyString
+  image: MyString
+  current_price: 1.5
+  price_change_24h: 1.5
+  price_change_percentage_24h: 1.5
+
+two:
+  symbol: MyString
+  name: MyString
+  image: MyString
+  current_price: 1.5
+  price_change_24h: 1.5
+  price_change_percentage_24h: 1.5

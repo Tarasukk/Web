@@ -1,0 +1,31 @@
+.button-yellov:hover {
+    background-color: #fcd95a;
+}
+
+.text-yellow:hover {
+    color: #fbd448;
+}
+
+.menu-item:hover {
+    color: #ca9729;
+}
+
+.telegram-button:hover {
+    background: #1696d6;
+}
+
+.mail-button:hover {
+    background: #666ff4;
+}
+
+.github-button:hover {
+    background: #2c2929;
+}
+
+.google-button:hover {
+    background-color: #eeeff1;
+}
+
+.coin-row:hover {
+    background-color: #f8f5f5;
+}

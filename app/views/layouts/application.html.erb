@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
+    <header class="header">
+      <%= link_to 'Taras Rohulya', root_path, class: "header-text" %>
+      <div class="menu ml-lg">
+        <%= link_to 'Markets', coins_path, class: 'ml-sm menu-item' %>
+        <%= link_to 'About', about_index_path, class: 'ml-lg menu-item' %>
+        <%= link_to 'Users', users_path, class: 'ml-lg menu-item' %>
+        <%= link_to 'Calculator', investments_path, class: 'ml-lg menu-item' %>
+      </div>
+      <div class="reg-log">
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <%= content_tag 'span', "@#{current_user.email}", class: '' %>
+            <div class="dropdown-content">
+              <%= link_to 'Profile',profiles_path,class:'menu-item' %>
+              <%= button_to 'Log out', destroy_user_session_path, method: :delete,class: 'mt-sm' %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path, class: 'ml-lg  button reg-button menu-item' %>
+          <%= link_to 'Register', new_user_registration_path, class: ' ml-lg button button-yellov reg-button' %>
+        <% end %>
+      </div>
+    </header>
+    <p class="notice mt-sm text-center"><%= notice %></p>
+    <p class="alert mt-sm text-center"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

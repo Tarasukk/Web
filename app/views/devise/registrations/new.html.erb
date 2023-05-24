@@ -1,0 +1,22 @@
+<div class="container-sm">
+  <div>
+    <h2 class="title mt">Create Personal Account</h2>
+    <%= form_with model: @user, data: {turbo: false} do |form| %>
+      <p class="very-mb-sm"> <%= form.label :email %></p>
+      <p><%= form.text_field :email, class: 'form-text-field '%></p>
+      <p class="very-mb-sm mt-sm"> <%= form.label :password %></p>
+      <p class="very-mb-sm"><%= form.password_field :password, class: 'form-text-field' %></p>
+      <p class="very-mb-sm mt-sm"> <%= form.label :password_confirmation %></p>
+      <p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
+      <% if flash[:alert].present? %>
+        <p class="message message-alert mt-sm"><%= flash[:alert] %></p>
+      <% end  %>
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |message| %>
+          <p class="text-red text-center very-mt-sm"><%= message %></p>
+        <% end %>
+      <% end %>
+      <p><%= form.submit "Create Personal Account", class: 'button button-yellov login-button text-md mt-sm' %></p>
+    <% end %>
+  </div>
+</div>

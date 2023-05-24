@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="main-section">
+    <div class="main-left-section">
+      <div>
+        <h1 >
+          Buy, trade, and hold 350+ 
+        </h1>
+        <h1 >
+          cryptocurrencies on Binance
+        </h1>
+      </div>
+      <div class="mt reg-main-section">
+        <a href="/users/sign_up" class="button button-yellov button-main text-md"><%= fa_icon('user')%> Sign Up With Email or Phone</a>
+        <div class="separator very-mt-sm">
+          <p class="text-md text-gray">or continue with</p>
+        </div>
+        <div class="very-mt-sm">
+          <%= button_to fa_icon('google') + " Sign in with Google", user_google_oauth2_omniauth_authorize_path, 
+          class: "button google-button text-md", data: { turbo: false } %>
+        </div>
+      </div>
+    </div>
+    <%= image_tag ("foreground-image-light.png"), class:'main-img' %>
+  </div>
+  <div class="main-bottom-section">
+    <div>
+      <h1 class="text-lg text-light-black">$38 billion</h1>
+      <p class="text-light-black">24h trading volume on Binance</p>
+      <p class="text-light-black">exchange</p>
+    </div>
+    <div>
+      <h1 class="text-lg text-light-black">350+</h1>
+      <p class="text-light-black">Cryptocurrencies listed</p>
+    </div>
+    <div>
+      <h1 class="text-lg text-light-black">120 million</h1>
+      <p class="text-light-black">Registered users</p>
+    </div>
+    <div>
+      <h1 class="text-lg text-light-black">0.10%</h1>
+      <p class="text-light-black">Lowest transaction fees</p>
+    </div>
+  </div>
+</div>

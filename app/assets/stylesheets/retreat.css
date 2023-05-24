@@ -1,0 +1,113 @@
+.ml-sm {
+    margin-left: 0.6rem;
+}
+
+.ml {
+    margin-left: 1rem;
+}
+
+.ml-lg {
+    margin-left: 1.75rem;
+}
+
+.mt {
+    margin-top: 100px;
+}
+
+.mt-sm {
+    margin-top: 2rem;
+}
+
+.mt-md {
+    margin-top: 1.5rem;
+}
+
+.mt-btn {
+    margin-top: 1rem;
+}
+
+.very-mb-sm {
+    margin-bottom: 0.5rem;
+}
+
+.mb-md {
+    margin-bottom: 3rem;
+}
+
+.very-mt-sm {
+    margin-top: 1.5rem;
+}
+
+.div-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.table-mt {
+    margin-top: 0.4rem;
+}
+
+.coins-name {
+    margin-top: 0.5rem;
+}
+
+.name {
+    margin-left: 1rem;
+}
+
+.price {
+    margin-left: 17.8rem;
+}
+
+.change {
+    margin-left: 18.9rem;
+}
+
+.change2 {
+    margin-left: 16.3rem;
+}
+
+.name,
+.price,
+.change,
+.change2 {
+    margin-right: 0.3rem;
+}
+
+.mr {
+    margin-right: 3rem;
+}
+
+.mr-md {
+    margin-right: 1.9rem;
+}
+
+.amount-invest {
+    margin-left: 0.5rem;
+
+}
+
+.sh_price-curr_price {
+
+    position: absolute;
+    left: 16.5rem;
+}
+
+.pch-dch {
+    position: absolute;
+    margin-left: 28rem;
+}
+
+.frame-center {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.frame-item {
+    margin-bottom: 0.5rem;
+}
+
+.user-padding {
+    padding: 1rem;
+}

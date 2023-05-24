@@ -1,0 +1,95 @@
+<div class="popup">
+  <div class="popup-content">
+    <%= form_with(model: @investment, local: true) do |f| %>
+      <div class="">
+        <p class="very-mb-sm text-center"> <%= f.label :coin_name %></p>
+        <%= f.select :coin_name, Coin.pluck(:name), {include_blank: true},{data: {controller: 'slim',class:'my-slim-select'}}%>
+      </div>
+      <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :shopping_price %></p>
+      <p class="text-center "><%= f.text_field :shopping_price, class: 'form-text-field',placeholder:'Leave empty and price will increase from the market'%></p>
+      <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :invest %></p>
+      <p class="text-center"><%= f.text_field :invest, class: 'form-text-field'%></p>
+      <div class="div-center mt-btn">
+        <%= f.submit '+', class: "text-20" %>
+      </div>
+    <% end %>
+    <%= image_tag("close.png", class: "close") %>
+  </div>
+</div>
+<%= javascript_include_tag('invest.js') %>
+<div class="container-md">
+  <div class="circle div-center mt mb-md">
+    <p><%= current_user.email.chr.upcase %></p>
+  </div>
+  <div class="flex-space-between div-center mt-md">
+    <p class="text-34 <%= my_color_for(get_final_dolars(@investments)) %>">
+      $<%= get_final_dolars(@investments) %>
+    </p>
+    <p class="text-34 mr-md ">$<%=get_final_invests(@investments) %></p>
+    <p class="text-34 <%= my_color_for(get_final_percents(@investments)) %>">
+      <%= get_final_percents(@investments) %>%
+    </p>
+  </div>
+  <div class="text-center">
+    <button class="text-20 very-mt-sm" type="button" id="button">+</button>
+  </div>
+  <div class="coins-frame mt-md display-flex very-mb-sm ">
+    <div class="frame-center">
+      <%= image_tag ("dollar.png"), class:'icon' %>
+    </div>
+    <div class="amount-invest">
+      <p class="frame-item">
+        Amount
+      </p>
+      <p>Invest$</p>
+    </div>
+    <div class="sh_price-curr_price">
+      <p class="frame-item">Shopping price</p>
+      <p>Current price</p>
+    </div>
+    <div class="pch-dch">
+      <p class=" frame-item">
+        Profit$
+      </p>
+      <p class="">
+        Profit%
+      </p>
+    </div>
+    <div class="frame-center button-delete">
+      <button class="text-red" type="button">
+        <%= fa_icon('trash-o') %>
+      </button>
+    </div>
+  </div>
+  <% @investments.each do |item| %>
+    <% if current_user.id == item.user_id %>
+      <div class="coins-frame mt-md display-flex very-mb-sm">
+        <div class="frame-center">
+          <img src="<%= Coin.find_by_name(item.coin_name).image %>" class="icon">
+        </div>
+        <div class="amount-invest">
+          <p class="frame-item">
+            <span class="text-orange"><%= Coin.find_by_name(item.coin_name).symbol.upcase %> </span>
+            <%= item.amount.round(4) %>
+          </p>
+          <p><%= item.invest %></p>
+        </div>
+        <div class="sh_price-curr_price">
+          <p class="frame-item"><%= item.shopping_price %></p>
+          <p><%= Coin.find_by_name(item.coin_name).price %></p>
+        </div>
+        <div class="pch-dch">
+          <p class="<%= my_color_for(item.dollar_change.to_f) %> frame-item">
+            <%= item.dollar_change.to_f.round(2) %>
+          </p>
+          <p class="<%= my_color_for(item.percentage_change.to_f) %>">
+            <%= item.percentage_change.to_f.round(2) %>%
+          </p>
+        </div>
+        <div class="frame-center button-delete">
+          <%= button_to fa_icon('trash-o'), investment_path(item.id) , method: :delete,class:'text-red'%>
+        </div>
+      </div>
+    <% end  %>
+  <% end  %>
+</div>

@@ -1,0 +1,58 @@
+.button {
+    border: 0;
+    border-radius: 5px;
+    color: #1e2329;
+    display: flow-root;
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+
+}
+
+.reg-button {
+    padding: 8px 13px 7px;
+}
+
+.button-yellov {
+    background-color: #fbd448;
+}
+
+
+
+.button-main {
+    padding: 15px 0px;
+}
+
+.login-button {
+    padding: 13px 0;
+}
+
+.google-button {
+    background: #eaecef;
+    padding: 13px 0;
+}
+
+.telegram-button {
+    background-color: #0088CC;
+    padding: 13px 0;
+    color: #fff;
+}
+
+.github-button {
+    padding: 13px 0;
+    color: #fff;
+    background: #171515;
+}
+
+.mail-button {
+    padding: 13px 0;
+    color: #fff;
+    background: #5561fb;
+}
+
+.button-delete {
+    margin-left: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+}

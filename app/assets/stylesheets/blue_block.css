@@ -1,0 +1,23 @@
+.blue_bloc,
+.blue_bloc--1 {
+    height: 400px;
+    width: 400px;
+    background: rgb(9, 189, 237);
+    background: linear-gradient(38deg, rgba(9, 189, 237, 1) 40%, rgba(23, 98, 223, 1) 75%);
+    border-radius: 25%;
+}
+
+.blue_bloc {
+    z-index: -1;
+    position: absolute;
+    right: -10rem;
+    top: -2rem;
+    rotate: -65deg;
+}
+
+.blue_bloc--1 {
+    position: absolute;
+    left: -12rem;
+    bottom: 4rem;
+    rotate: -30deg;
+}

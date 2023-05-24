@@ -1,0 +1,9 @@
+<div class="container-sm">
+  <h3 class="text-center ">Users Email</h3>
+  <hr>
+  <% @users.each do |user| %>
+    <p class="user-padding"><%= fa_icon('user light')%> <%= user.email %></p>
+    <hr>
+  <% end %>
+</div>
+   

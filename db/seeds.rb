@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+data = CoinInfoService.new.get_info
+
+for item in data 
+    new_coin = Coin.create(
+        symbol: item["symbol"],
+        name: item["name"],
+        image: item["image"],
+        price: item["current_price"],
+        change_24h_d: item["price_change_24h"],
+        change_24h_p: item["price_change_percentage_24h"],
+        coin_id: item["id"]
+    )
+end

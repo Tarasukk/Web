@@ -1,0 +1,31 @@
+<h2 class="text-center">Markets Overview</h2>
+<h6 class="text-center"><%= @data[0].updated_at %></h6>
+<div class="container-lg">
+  <div class="markets-nav-bar very-mb-sm ">
+    <div class="display-flex">
+      <p class="name"><%= sortable "name", "Name ", 'text-yellow' %></p>
+      <%= sort_direction_arrow('name') %>
+      <p class="price"><%= sortable "price", 'Price' , 'text-yellow' %></p>
+      <%= sort_direction_arrow('price') %>
+      <p class="change"><%= sortable "change_24h_d", 'Change $', 'text-yellow' %></p>
+      <%= sort_direction_arrow('change_24h_d') %>
+      <p class="change2"><%= sortable "change_24h_p", 'Change %', 'text-yellow'%></p>
+      <%= sort_direction_arrow('change_24h_p') %>
+    </div>
+  </div>
+  <div class="">
+    <% @data.each do |item| %>
+      <a class="flex-space-between coin-row" href="coins/<%= item.id %>">
+        <div class="markets-item display-flex">
+          <img src="<%= item["image"]%>" class="icon">
+          <p class="table-mt ml-sm"><%= item["symbol"].upcase %></p>
+          <p class="coins-name ml-sm text-sm text-gray "><%= item["name"]%> </p>
+        </div>
+        <p class="markets-item table-mt <%= my_color_for(item.change_24h_p)%>"> <%= item["price"] %> $</p>
+        <p class="markets-item table-mt <%= my_color_for(item.change_24h_p)%>"><%= item["change_24h_d"].round(5) %>$</p>
+        <p class="markets-item mark-last-item table-mt <%= my_color_for(item.change_24h_p)%>"><%= item["change_24h_p"].round(4) %>%</p>
+      </a>
+      <hr>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container-sm">
+  <div>
+    <h2 class="title mt">Login</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+      <p class="very-mb-sm"> <%= form.label :email %></p>
+      <p><%= form.text_field :email, class: 'form-text-field '%></p>
+      <p class="very-mb-sm mt-sm"> <%= form.label :password %></p>
+      <p class="very-mb-sm"><%= form.password_field :password, class: 'form-text-field' %></p>
+      <% if flash[:alert].present? %>
+        <p class="text-center text-red mt-sm"><%= flash[:alert] %></p>
+      <% end  %>
+      <%= form.submit "Log In", class: 'button button-yellov login-button text-md mt-sm' %>
+    <% end %>
+  </div>
+  <div class="separator very-mt-sm">
+    <p class="text-md text-gray">or</p>
+  </div>
+  <div class="very-mt-sm">
+    <%= render "devise/shared/links" %>
+    <%#= link_to 'google', root_path , class: 'button google-button text-md' %>
+  </div>
+  <p class="mt-sm text-center"><%= link_to 'Create Account', new_user_registration_path, class: 'text-yellow' %></p>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  coin_name: MyString
+  shopping_price: 1.5
+  invest: 1.5
+  amount: 1.5
+  dollar_change: 1.5
+  percentage_change: 1.5
+
+two:
+  user_id: 1
+  coin_name: MyString
+  shopping_price: 1.5
+  invest: 1.5
+  amount: 1.5
+  dollar_change: 1.5
+  percentage_change: 1.5

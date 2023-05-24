@@ -1,0 +1,63 @@
+<div class="div-center text-center very-mt-sm">
+  <img src="<%= @coin.image %>" class="icon-show">
+  <h1 class="very-mt-sm"><%= @coin.name %></h1>
+</div>
+<div class="text-center">
+  <button class="text-20 very-mt-sm" type="button">+</button>
+</div>
+<div class="very-mt-sm">
+  <canvas id="test" c></canvas>
+</div>
+<div class="popup">
+  <div class="popup-content">
+    <%= form_with(model: @investment, local: true) do |f| %>
+      <p class="very-mb-sm text-center"> <%= f.label :coin_name %></p>
+      <p class="text-center "><%= f.text_field :coin_name, class: 'form-text-field',value: @coin.name %></p>
+      <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :shopping_price %></p>
+      <p class="text-center "><%= f.text_field :shopping_price, class: 'form-text-field',value: @coin.price %></p>
+      <p class="very-mb-sm very-mt-sm text-center"> <%= f.label :invest %></p>
+      <p class="text-center"><%= f.text_field :invest, class: 'form-text-field'%></p>
+      <div class="div-center mt-btn">
+        <%= f.submit '+', class: "text-20" %>
+      </div>
+      <%= image_tag("close.png", class: "close") %>
+    <% end %>
+  </div>
+</div>
+<%= javascript_include_tag('invest.js') %>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  var coin_id = '<%= @coin.coin_id %>'
+  var coin_name = '<%= @coin.name %>'
+
+
+  fetch(`https://api.coingecko.com/api/v3/coins/${coin_id}/market_chart?vs_currency=usd&days=7 `)
+  .then(response => response.json())
+  .then(data => {
+
+    var ctx = document.getElementById('test').getContext('2d');
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.prices.map(price => new Date(price[0]).toLocaleString('en-US', { month: 'long', day: 'numeric' })),
+        datasets: [{
+          label: `${coin_name} Price`,
+          data: data.prices.map(price => price[1]),
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          fill:true
+        }]
+      }
+    });
+  });
+
+  });
+  if(!localStorage.getItem('is_reloaded')) {
+    localStorage.setItem('is_reloaded', true);
+    location.reload();
+  } else {
+    localStorage.removeItem('is_reloaded');
+  }
+</script>
