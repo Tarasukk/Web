@@ -1,4 +1,5 @@
 class InvestmentsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user  = current_user
     @investment = Investment.new
@@ -18,11 +19,10 @@ class InvestmentsController < ApplicationController
     else
       redirect_to investments_path , alert: 'You filled out the form incorrectly'
     end
-
   end
 
   def destroy  
     Investment.destroy(params[:id])
-    redirect_to investments_path
+    redirect_to investments_path, notice: 'Your investment destroyed'
   end
 end

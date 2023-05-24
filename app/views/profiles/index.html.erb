@@ -1,4 +1,8 @@
-<% if current_user.present? %>
-  <%= "email ~ #{current_user.email}" %>
-  <%= button_to 'Вийти', session_path, method: :delete %>
-<% end %>
+<div class="container-sm">
+  <div class="circle div-center mt mb-md">
+    <p><%= current_user.email.chr.upcase %></p>
+  </div>
+  <p class="text-20 text-center"><%= current_user.email%></p>
+  <%= button_to 'Log out', destroy_user_session_path, method: :delete,class: 'button-yellov button button-main mt-sm text-md' %>
+  <%= link_to 'Update information','/users/edit',class: 'button-yellov button button-main mt-sm text-md' %>
+</div>

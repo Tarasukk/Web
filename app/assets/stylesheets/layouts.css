@@ -173,7 +173,8 @@ body {
     border-radius: 50%;
     font-size: 60px;
     color: #fff;
-    background: #0088CC
+    background: rgb(23, 98, 223);
+    background: linear-gradient(40deg, rgba(23, 98, 223, 1) 0%, rgba(0, 136, 204, 1) 100%);
 }
 
 .coins-frame {
@@ -202,8 +203,27 @@ body {
     height: 300px;
     width: 500px;
     background-color: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 5px;
     position: relative;
     z-index: 2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
