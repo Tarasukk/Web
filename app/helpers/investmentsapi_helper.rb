@@ -1,0 +1,2 @@
+module InvestmentsapiHelper
+end

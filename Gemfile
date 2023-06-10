@@ -94,3 +94,6 @@ gem "groupdate"
 
 
 gem 'chart-js-rails'
+
+gem 'rswag-api'
+gem 'rswag-ui'

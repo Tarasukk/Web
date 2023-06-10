@@ -222,6 +222,11 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
+    rswag-api (2.9.0)
+      railties (>= 3.1, < 7.1)
+    rswag-ui (2.9.0)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.8.1)
@@ -296,6 +301,8 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
+  rswag-api
+  rswag-ui
   selenium-webdriver
   sprockets-rails
   stimulus-rails

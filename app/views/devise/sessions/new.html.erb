@@ -6,9 +6,7 @@
       <p><%= form.text_field :email, class: 'form-text-field '%></p>
       <p class="very-mb-sm mt-sm"> <%= form.label :password %></p>
       <p class="very-mb-sm"><%= form.password_field :password, class: 'form-text-field' %></p>
-      <% if flash[:alert].present? %>
-        <p class="text-center text-red mt-sm"><%= flash[:alert] %></p>
-      <% end  %>
+      
       <%= form.submit "Log In", class: 'button button-yellov login-button text-md mt-sm' %>
     <% end %>
   </div>

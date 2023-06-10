@@ -16,11 +16,11 @@ module ApplicationHelper
     def sort_direction_arrow(name)
       if sort_direction == 'desc' && sort_column == name
         content_tag :div do
-          concat fa_icon('arrow-up 10x')
+          concat fa_icon('arrow-up')
         end
       elsif sort_direction == 'asc' && sort_column == name
         content_tag :div do
-          concat fa_icon(' arrow-up rotate-180')
+          concat fa_icon('arrow-up rotate-180')
         end
       else
         content_tag :div do

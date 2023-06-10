@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Investment API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/investmentsapi": {
+      "post": {
+        "tags": ["Investments"],
+        "summary": "Create a new investment",
+        "operationId": "createInvestment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Investment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Investment created"
+          },
+          "400": {
+            "description": "Invalid request"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Investments"],
+        "summary": "Get all investments",
+        "operationId": "getAllInvestments",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Investment"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Investments"],
+        "summary": "Delete an investment",
+        "operationId": "deleteInvestment",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "ID of the investment to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Investment deleted"
+          },
+          "404": {
+            "description": "Investment not found"
+          }
+        }
+      }
+    },
+    "/usersapi": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all users",
+        "operationId": "getAllUsers",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Investment": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer"
+          },
+          "coin_name": {
+            "type": "string"
+          },
+          "shopping_price": {
+            "type": "number"
+          },
+          "invest": {
+            "type": "number"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
