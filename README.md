@@ -77,16 +77,27 @@ rails s
 <br>
 <h4>4. API</h4>
 :white_check_mark: Integrate with coingeco api
+<br>
+<br>
 :white_check_mark: Added data from the API to the database
+<br>
+<br>
 :white_check_mark: Made a cron job to update the data
 <br>
-<h4>4. Сalculator</h4>
+<br>
+<h4>5. Сalculator</h4>
 :white_check_mark: Added an investment calculator
+<br>
+<br>
 :white_check_mark: Added a crown job for updating investment data
 <br>
-<h4>4. Swagger and Postmen</h4>
+<h4>6. Swagger and Postmen</h4>
 :white_check_mark: GET on user
+<br>
+<br>
 :white_check_mark: GET on investment
+<br>
+<br>
 :white_check_mark: POSt on investment
 <br>
 Will be updated:smile:
