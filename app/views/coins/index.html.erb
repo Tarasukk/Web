@@ -15,8 +15,7 @@
   </div>
   <div class="">
     <% @data.each do |item| %>
-      <div class="flex-space-between coin-row" ">
-        <%# href="coins/<%= item.id %>
+      <a class="flex-space-between coin-row"  href="coins/<%= item.id %>">
         <div class="markets-item display-flex">
           <img src="<%= item["image"]%>" class="icon">
           <p class="table-mt ml-sm"><%= item["symbol"].upcase %></p>
@@ -24,11 +23,8 @@
         </div>
         <p class="markets-item table-mt <%= my_color_for(item.change_24h_p)%>"> <%= item["price"] %> $</p>
         <p class="markets-item table-mt <%= my_color_for(item.change_24h_p)%>"><%= item["change_24h_d"].round(5) %>$</p>
-        <p class="markets-item markets-item table-mt <%= my_color_for(item.change_24h_p)%>"><%= item["change_24h_p"].round(4) %>%</p>
-        <div class="markets-item mark-last-item table-mt">
-          <%= button_to fa_icon('trash-o'), "coins/#{item.id}" , method: :delete,class:'text-red'%>
-        </div>
-      </div>
+        <p class="markets-item mark-last-item table-mt <%= my_color_for(item.change_24h_p)%>"><%= item["change_24h_p"].round(4) %>%</p>
+      </a>
       <hr>
     <% end %>
   </div>

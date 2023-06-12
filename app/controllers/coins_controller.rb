@@ -1,5 +1,6 @@
 class CoinsController < ApplicationController
   helper_method :sort_column, :sort_direction 
+  before_action :authenticate_user!
     def index
       @data = Coin.order(sort_column + ' ' + sort_direction)
       @investment = Investment.new

@@ -95,6 +95,28 @@
           }
         }
       }
+    },
+    "/coinsapi": {
+      "get": {
+        "tags": ["Coins"],
+        "summary": "Get all coins",
+        "operationId": "getAllCoins",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Coin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -127,6 +149,23 @@
           },
           "email": {
             "type": "string"
+          }
+        }
+      },
+      "Coin": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
           }
         }
       }

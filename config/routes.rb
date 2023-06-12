@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :main, only: %i[index]
   resources :about, only: %i[index]
   resources :coins, only: %i[destroy index show]
+  resources :coinsapi, only: %i[index]
   resources :investments, only: %i[index create destroy]
   resources :investmentsapi, only: %i[create index]
   resources :usersapi, only: %i[index]
