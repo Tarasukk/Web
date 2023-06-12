@@ -13,6 +13,11 @@ class CoinsController < ApplicationController
       # @chart_data = data['prices'].map { |price| [Time.at(price[0] / 1000).to_date, price[1].round(2)] }
 
     end
+
+    def destroy
+      Coin.destroy(params[:id])
+      redirect_to coins_path, notice: ' GOod debil'
+    end
     private
 
     def sort_column

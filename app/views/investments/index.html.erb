@@ -21,6 +21,7 @@
   <div class="circle div-center mt mb-md">
     <p><%= current_user.email.chr.upcase %></p>
   </div>
+  <h6 class="text-center"><%= @investments[0].updated_at %></h6>
   <div class="flex-space-between div-center mt-md">
     <p class="text-34 <%= my_color_for(get_final_dolars(@investments)) %>">
       $<%= get_final_dolars(@investments) %>
